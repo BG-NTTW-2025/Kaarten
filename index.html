@@ -55,9 +55,9 @@ o<!DOCTYPE html>
     }
 
     .back-button {
-      margin-top: 5vh;
+      margin-top: 1vh;
       cursor: pointer;
-      width: 50px;
+      width: 150px;
       height: auto;
     }
 
@@ -88,7 +88,7 @@ o<!DOCTYPE html>
 
 <div id="gallery">
 
-  <p class="section-title">8x4 waterbeheersingskaarten</p>
+  <p class="section-title">8x4 waterbeheersingskaarten<br>in te zetten naar eigen keuze</p>
   <div class="thumbs-row">
     <img src="thumb1.gif" class="thumb" data-img="thumb1.gif" data-desc="desc1" alt="thumb1" onclick="showViewer(this)">
     <img src="thumb2.gif" class="thumb" data-img="thumb2.gif" data-desc="desc2" alt="thumb2" onclick="showViewer(this)">
@@ -102,7 +102,7 @@ o<!DOCTYPE html>
     <img src="thumb8.gif" class="thumb" data-img="thumb8.gif" data-desc="desc8" alt="thumb8" onclick="showViewer(this)">
   </div>
 
-  <p class="section-title">7x4 actiekaarten</p>
+  <p class="section-title">7x4 actiekaarten<br>Na ontvangst direct uitvoeren</p>
   <div class="thumbs-row">
     <img src="thumb9.gif" class="thumb" data-img="thumb9.gif" data-desc="desc9" alt="thumb9" onclick="showViewer(this)">
     <img src="thumb10.gif" class="thumb" data-img="thumb10.gif" data-desc="desc10" alt="thumb10" onclick="showViewer(this)">
@@ -115,7 +115,7 @@ o<!DOCTYPE html>
     <img src="thumb15.gif" class="thumb" data-img="thumb15.gif" data-desc="desc15" alt="thumb15" onclick="showViewer(this)">
   </div>
 
-  <p class="section-title">4 natuurrampkaarten</p>
+  <p class="section-title">4 natuurrampkaarten<br>Na ontvangst direct uitvoeren</p</p>
   <div class="thumbs-row">
     <img src="thumb16.gif" class="thumb" data-img="thumb16.gif" data-desc="desc16" alt="thumb16" onclick="showViewer(this)">
     <img src="thumb17.gif" class="thumb" data-img="thumb17.gif" data-desc="desc17" alt="thumb17" onclick="showViewer(this)">
@@ -123,7 +123,7 @@ o<!DOCTYPE html>
     <img src="thumb19.gif" class="thumb" data-img="thumb19.gif" data-desc="desc19" alt="thumb19" onclick="showViewer(this)">
   </div>
 
-  <p class="section-title">3x4 conflictkaarten</p>
+  <p class="section-title">3x4 conflictkaarten<br>in te zetten naar eigen keuze</p>
   <div class="thumbs-row">
     <img src="thumb20.gif" class="thumb" data-img="thumb20.gif" data-desc="desc20" alt="thumb20" onclick="showViewer(this)">
     <img src="thumb21.gif" class="thumb" data-img="thumb21.gif" data-desc="desc21" alt="thumb21" onclick="showViewer(this)">
@@ -137,19 +137,27 @@ o<!DOCTYPE html>
 <div class="viewer" id="viewer">
   <img id="large-image" class="large" src="" alt="Grote weergave">
   <p id="description"></p>
-  <img src="terugknop.png" class="back-button" onclick="hideViewer()" alt="Terug naar galerij">
+  <img src="butindex.gif" class="back-button" onclick="hideViewer()" alt="Terug naar galerij">
 </div>
 
 <!-- Beschrijvingen (verborgen) -->
 <div id="descriptions" style="display: none;">
-  <p id="desc1">Dit is de eerste regel<br>en dit is de tweede regel.</p>
-  <p id="desc2">Beschrijving afbeelding 2<br>met nog wat extra info.</p>
-  <p id="desc3">Beschrijving afbeelding 3</p>
-  <p id="desc4">Beschrijving afbeelding 4</p>
-  <p id="desc5">Beschrijving afbeelding 5</p>
-  <p id="desc6">Beschrijving afbeelding 6</p>
-  <p id="desc7">Beschrijving afbeelding 7</p>
-  <p id="desc8">Beschrijving afbeelding 8</p>
+  <p id="desc1">De Terp<br>Een permanente bescherming tegen <br>het water.<br>Te plaatsen op een landcel zonder pion.
+  <br>Alternatief,<br>Verplaats een pion naar keuze<br>3 stappen over land.</p>
+  <p id="desc2">De Polder<br>Kwetsbare bescherming tegen het<br>water. Onder water d.m.v. dobbelen<br>en Natuurramp.<br>Te plaatsen op een watercel.
+  <br>Alternatief,<br>Verplaats een pion naar keuze<br>3 stappen over land.</p>
+  <p id="desc3">Het Windmolengemaal<br>Houdt de Polder droog.<br>Verwoesting door Bijl en Natuurramp.<br>Te plaatsen in een Polder.
+  <br>Alternatief,<br>Verplaats een pion naar keuze<br>3 stappen over land.</p>
+  <p id="desc4">De Brug<br>Vaste verbinding over water.<br>Verwoesting door Bijl en Natuurramp.<br>Te plaatsen op een watercel.
+  <br>Alternatief,<br>Verplaats een pion naar keuze<br>3 stappen over land.</p>
+  <p id="desc5">Boot van hout<br>Flexibele verplaatsing over water.<br>Verwoesting door Bijl en Natuurramp.<br>Te plaatsen op een watercel.
+  <br>Maximaal 1 boot kaart op hand.<br>Alternatief,<br>Verplaats een pion naar keuze<br>3 stappen over land.</p>
+  <p id="desc6">Rubberboot<br>Beperkte verplaatsing over water.<br>Maximaal 2 water- en 1 landcel.<br>Eenmalig gebruik.
+  <br>Maximaal 1 boot kaart op hand.<br>Alternatief,<br>Verplaats een pion naar keuze<br>2 stappen over land.</p>
+   <p id="desc7">Lieslaarzen<br>Beperkte verplaatsing over water.<br>Verplaatsing van watercel naar<br>aangrenzende landcel.<br>Eenmalig gebruik.
+  <br>Geen verplaatsing naar een boot.<br>Alternatief,<br>Verplaats een pion naar keuze<br>2 stappen over land.</p>
+  <p id="desc8">Reddingsboei<br>Bescherming tegen verdrinking.<br>Verplaatsing van watercel naar<br>aangrenzende landcel.<br>Eenmalig gebruik.
+  <br>Geen verplaatsing naar een boot.<br>Alternatief,<br>Verplaats een pion naar keuze<br>2 stappen over land.</p>
   <p id="desc9">Beschrijving afbeelding 9</p>
   <p id="desc10">Beschrijving afbeelding 10</p>
   <p id="desc11">Beschrijving afbeelding 11</p>
