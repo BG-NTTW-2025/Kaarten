@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerij met Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    /* Gallerij: grid met vaste thumb-afmetingen */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      gap: 1vw;
+      padding: 1vw;
+      max-width: 1000px;
+      margin: auto;
+      justify-content: center;
+    }
+
+    .thumb {
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+      cursor: pointer;
+      background-color: #333;
+      transition: transform 0.2s;
+    }
+
+    .thumb:hover {
+      transform: scale(1.05);
+    }
+
+    /* Viewer (grote versie + beschrijving) */
+    .viewer {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2vh 2vw;
+      text-align: center;
+    }
+
+    /* We geven de viewer-afbeelding een maximale afmeting zodat hij meeschaaalt */
+    .viewer img.large {
+      max-width: 90vw;
+      max-height: 80vh;
+      object-fit: contain;
+      margin-bottom: 1vh;
+    }
+
+    .back-button {
+      margin-top: 2vh;
+      cursor: pointer;
+      width: 50px;
+      height: auto;
+    }
+
+    /* Responsive: op mobiele schermen 2 kolommen in de gallery */
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(2, auto);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Gallerij -->
+<div class="gallery" id="gallery">
+<img src="thumb1.gif" class="thumb" data-img="thumb1.gif" data-desc="desc1" alt="thumb1" onclick="showViewer(this)">
+<img src="thumb2.gif" class="thumb" data-img="thumb2.gif" data-desc="desc2" alt="thumb2" onclick="showViewer(this)">
+<img src="thumb3.gif" class="thumb" data-img="thumb3.gif" data-desc="desc3" alt="thumb3" onclick="showViewer(this)">
+<img src="thumb4.gif" class="thumb" data-img="thumb4.gif" data-desc="desc4" alt="thumb4" onclick="showViewer(this)">
+<img src="thumb5.gif" class="thumb" data-img="thumb5.gif" data-desc="desc5" alt="thumb5" onclick="showViewer(this)">
+<img src="thumb6.gif" class="thumb" data-img="thumb6.gif" data-desc="desc6" alt="thumb6" onclick="showViewer(this)">
+<img src="thumb7.gif" class="thumb" data-img="thumb7.gif" data-desc="desc7" alt="thumb7" onclick="showViewer(this)">
+<img src="thumb8.gif" class="thumb" data-img="thumb8.gif" data-desc="desc8" alt="thumb8" onclick="showViewer(this)">
+<img src="thumb9.gif" class="thumb" data-img="thumb9.gif" data-desc="desc9" alt="thumb9" onclick="showViewer(this)">
+<img src="thumb10.gif" class="thumb" data-img="thumb10.gif" data-desc="desc10" alt="thumb10" onclick="showViewer(this)">
+<img src="thumb11.gif" class="thumb" data-img="thumb11.gif" data-desc="desc11" alt="thumb11" onclick="showViewer(this)">
+<img src="thumb12.gif" class="thumb" data-img="thumb12.gif" data-desc="desc12" alt="thumb12" onclick="showViewer(this)">
+<img src="thumb13.gif" class="thumb" data-img="thumb13.gif" data-desc="desc13" alt="thumb13" onclick="showViewer(this)">
+<img src="thumb14.gif" class="thumb" data-img="thumb14.gif" data-desc="desc14" alt="thumb14" onclick="showViewer(this)">
+<img src="thumb15.gif" class="thumb" data-img="thumb15.gif" data-desc="desc15" alt="thumb15" onclick="showViewer(this)">
+<br>
+<img src="thumb16.gif" class="thumb" data-img="thumb16.gif" data-desc="desc16" alt="thumb16" onclick="showViewer(this)">
+<img src="thumb17.gif" class="thumb" data-img="thumb17.gif" data-desc="desc17" alt="thumb17" onclick="showViewer(this)">
+<img src="thumb18.gif" class="thumb" data-img="thumb18.gif" data-desc="desc18" alt="thumb18" onclick="showViewer(this)">
+<img src="thumb19.gif" class="thumb" data-img="thumb19.gif" data-desc="desc19" alt="thumb19" onclick="showViewer(this)">
+<img src="thumb20.gif" class="thumb" data-img="thumb20.gif" data-desc="desc20" alt="thumb20" onclick="showViewer(this)">
+<img src="thumb21.gif" class="thumb" data-img="thumb21.gif" data-desc="desc21" alt="thumb21" onclick="showViewer(this)">
+<img src="thumb22.gif" class="thumb" data-img="thumb22.gif" data-desc="desc22" alt="thumb22" onclick="showViewer(this)">
+
+
+</div>
+
+<!-- Viewer -->
+<div class="viewer" id="viewer">
+  <img id="large-image" class="large" src="" alt="Grote weergave">
+  <p id="description"></p>
+  <img src="terugknop.png" class="back-button" onclick="hideViewer()" alt="Terug naar galerij">
+</div>
+
+<!-- Beschrijvingen (verborgen) -->
+<div id="descriptions" style="display: none;">
+  <p id="desc1">Dit is de eerste regel<br>en dit is de tweede regel.</p>
+  <p id="desc2">Beschrijving afbeelding 2<br>met nog wat extra info.</p>
+  <p id="desc3">Beschrijving afbeelding 3</p>
+  <p id="desc4">Beschrijving afbeelding 4</p>
+  <p id="desc5">Beschrijving afbeelding 5</p>
+  <p id="desc6">Beschrijving afbeelding 6</p>
+  <p id="desc7">Beschrijving afbeelding 7</p>
+  <p id="desc8">Beschrijving afbeelding 8</p>
+  <p id="desc9">Beschrijving afbeelding 9</p>
+  <p id="desc10">Beschrijving afbeelding 10</p>
+  <p id="desc11">Beschrijving afbeelding 11</p>
+  <p id="desc12">Beschrijving afbeelding 12</p>
+  <p id="desc13">Beschrijving afbeelding 13</p>
+  <p id="desc14">Beschrijving afbeelding 14</p>
+  <p id="desc15">Beschrijving afbeelding 15</p>
+  <p id="desc16">Beschrijving afbeelding 16</p>
+  <p id="desc17">Beschrijving afbeelding 17</p>
+  <p id="desc18">Beschrijving afbeelding 18</p>
+  <p id="desc19">Beschrijving afbeelding 19</p>
+    <p id="desc20">Beschrijving afbeelding 20</p>
+  <p id="desc21">Beschrijving afbeelding 21</p>
+  <p id="desc22">Beschrijving afbeelding 22</p>
+</div>
+
+<!-- Script -->
+<script>
+  function showViewer(el) {
+    const image = el.getAttribute('data-img');
+    const descId = el.getAttribute('data-desc');
+    const descText = document.getElementById(descId).innerHTML;  // Gebruik innerHTML voor <br> om te werken
+
+    document.getElementById('large-image').src = image;
+    document.getElementById('description').innerHTML = descText;
+    document.getElementById('gallery').style.display = 'none';
+    document.getElementById('viewer').style.display = 'flex';
+  }
+
+  function hideViewer() {
+    document.getElementById('viewer').style.display = 'none';
+    document.getElementById('gallery').style.display = 'grid';
+  }
+</script>
+
+</body>
+</html>
